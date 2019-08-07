@@ -5,9 +5,6 @@ import com.typesafe.config.Config;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.concurrent.TimeUnit;
-
 import static Utilities.LoadProperties.getValueFromPropertyFile;
 
 
@@ -37,7 +34,6 @@ public class LoginPage extends PageObject {
 
 
     public void login(String user) throws  InterruptedException {
-        withTimeoutOf(20, TimeUnit.SECONDS).waitFor(email);
         email.sendKeys(getValueFromPropertyFile("testData1",user+"Email"));
         password.sendKeys(getValueFromPropertyFile("testData1",user+"Password"));
         submit_button.click();
