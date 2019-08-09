@@ -188,7 +188,7 @@ public class DashboardPage extends PageObject {
         waitABit(5000);
         String firstProductName = productNames.get(0).getText();
         String expName = getValueFromPropertyFile("testData1", "productname");
-        waitABit(300);
+        waitABit(5000);
         Assert.assertEquals(firstProductName,expName);
         withTimeoutOf(40, TimeUnit.SECONDS).waitFor(profile_button).waitUntilClickable();
         pushtoshopify_button.click();
